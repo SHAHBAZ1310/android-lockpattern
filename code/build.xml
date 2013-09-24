@@ -82,4 +82,16 @@
     <!-- version-tag: 1 -->
     <import file="${sdk.dir}/tools/ant/build.xml" />
 
+    <!-- Updates the pre-processed PNG cache -->
+    <!-- Disable verbose output -->
+    <target name="-crunch">
+        <exec executable="${aapt}" taskName="crunch">
+            <arg value="crunch" />
+            <arg value="-S" />
+            <arg path="${resource.absolute.dir}" />
+            <arg value="-C" />
+            <arg path="${out.res.absolute.dir}" />
+        </exec>
+    </target>
+
 </project>
